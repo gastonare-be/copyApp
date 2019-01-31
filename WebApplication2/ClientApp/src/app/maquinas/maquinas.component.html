@@ -1,0 +1,39 @@
+<h1><span class="glyphicon glyphicon-print" style="color:darkgreen"></span>
+  Maquinas de: </h1>
+
+<p *ngIf="!(maquinas && maquinas.length)">
+  No existen registros para mostrar
+</p>
+
+<table class="table table-responsive table-striped" *ngIf="(maquinas && maquinas.length)">
+  <thead>
+    <tr>
+      <th>Serial</th>
+      <th>Marca</th>
+      <th>Modelo</th>
+      <th>Contador</th>
+      <th>Acciones</th>
+    </tr>
+
+  </thead>
+  <tbody>
+    <tr *ngFor="let maquina of maquinas">
+      <td>{{maquina.serial}}</td>
+      <td>{{maquina.marca}}</td>
+      <td>{{maquina.modelo}}</td>
+      <td>{{maquina.contador}}</td>
+      <td>
+        <button class="btn btn-primary" [routerLink]='["/reparaciones/" + maquina.id]'>
+          Ver Reparaciones
+          <span class="glyphicon glyphicon-wrench"></span>
+        </button>
+        <button class="btn btn-danger" (click)="delete(cliente)">
+          Borrar
+
+          <span class="glyphicon glyphicon-trash"></span>
+        </button>
+      </td>
+
+    </tr>
+  </tbody>
+</table>

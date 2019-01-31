@@ -1,0 +1,43 @@
+<h1>Reparaciones</h1>
+
+<button [routerLink]='["/reparaciones-agregar/" + maquinaId]' class="btn btn-primary">
+  Agregar Reparacion
+  <span class="glyphicon glyphicon-plus" style="color:chartreuse"></span>
+</button>
+
+<p *ngIf="!(reparaciones && reparaciones.length)">
+  No existen registros para mostrar
+</p>
+<br>
+<br>
+<table class="table" *ngIf="(reparaciones && reparaciones.length)">
+  <thead>
+    <tr>
+      <th>Fecha</th>
+      <th>Contador</th>
+      <th>Mod</th>
+      <th>Ur</th>
+      <th>Op</th>
+      <th>Descripcion</th>
+
+    </tr>
+
+  </thead>
+  <tbody>
+    <tr *ngFor="let reparacion of reparaciones">
+      <td>{{reparacion.fecha}}</td>
+      <td>{{reparacion.contador}}</td>
+      <td>{{reparacion.lim_Mod}}</td>
+      <td>{{reparacion.lim_Ur}}</td>
+      <td>{{reparacion.lim_Op}}</td>
+      <td>{{reparacion.descripcion}}</td>
+
+      <td>
+
+        <button class="btn btn-danger" (click)="delete(reparacion)">Borrar</button>
+
+      </td>
+
+    </tr>
+  </tbody>
+</table>

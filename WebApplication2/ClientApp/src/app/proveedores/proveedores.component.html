@@ -1,0 +1,36 @@
+<h1>Proveedores</h1>
+
+<button [routerLink]='["/proveedores-agregar"]' class="btn btn-success">Agregar un Proveedor</button>
+
+<p *ngIf="!(proveedores && proveedores.length)">
+  No existen registros para mostrar
+</p>
+<br>
+
+
+<table class="table" *ngIf="(proveedores && proveedores.length)">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Direccion</th>
+      <th>Telefono</th>
+      <th>Cuit</th>
+      <th>Acciones</th>
+
+    </tr>
+
+  </thead>
+  <tbody>
+    <tr *ngFor="let proveedor of proveedores">
+      <td>{{ proveedor.nombre }}</td>
+      <td>{{ proveedor.direccion }}</td>
+      <td>{{ proveedor.telefono }}</td>
+      <td>{{ proveedor.cuit }}</td>
+
+      <td>
+        <button class="btn btn-danger" (click)="delete(proveedor)">Borrar</button>
+      </td>
+
+    </tr>
+  </tbody>
+</table>

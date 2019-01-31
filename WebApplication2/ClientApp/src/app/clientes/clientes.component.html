@@ -1,0 +1,36 @@
+<h1>Clientes</h1>
+
+<button [routerLink]='["/Clientes-agregar"]' class="btn btn-success">Agregar Cliente</button>
+
+<p *ngIf="!(clientes && clientes.length)">
+  No existen registros para mostrar
+</p>
+<br>
+
+
+<table class="table" *ngIf="(clientes && clientes.length)">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Fecha Neacimiento</th>
+      <th>Acciones</th>
+    </tr>
+
+  </thead>
+  <tbody>
+    <tr *ngFor="let cliente of clientes">
+      <td>{{cliente.nombre}}</td>
+      <td>{{cliente.fechaNacimiento | date: 'dd-MM-yyyy'}}</td>
+      <td>
+        <button class="btn btn-info" [routerLink]='["/maquinas/" + cliente.id]'>Sus Maquinas</button>
+        <button class="btn btn-primary" [routerLink]='["/Clientes-editar/" + cliente.id]'>Editar</button>
+        <button class="btn btn-danger" (click)="delete(cliente)">Borrar</button>
+
+      </td>
+
+    </tr>
+  </tbody>
+</table>
+<div>
+  <app-datatables-clientes></app-datatables-clientes>,
+</div>

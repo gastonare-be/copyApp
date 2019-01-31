@@ -1,0 +1,140 @@
+<h1>Agregar una reparacion</h1>
+
+<form class="form-horizontal" novalidate
+      (ngSubmit)="save()" [formGroup]="formGroup">
+  <fieldset>
+
+    <div class="form-group"
+         [ngClass]="{'has-error': (formGroup.get('contador').touched || formGroup.get('contador').dirty) && !formGroup.get('contador').valid }">
+      <label class="col-md-2 control-label"
+             for="contador">Contador</label>
+
+      <div class="col-md-8">
+        <input class="form-control"
+               id="contador"
+               type="text"
+               required
+               formControlName="contador" />
+        <span class="help-block" *ngIf="(formGroup.get('contador').touched || formGroup.get('contador').dirty) && formGroup.get('contador').errors">
+          <span *ngIf="formGroup.get('contador').errors.required">
+            El campo contador es requerido
+          </span>
+        </span>
+      </div>
+    </div>
+
+    <div class="form-group"
+         [ngClass]="{'has-error': (formGroup.get('fecha').touched || formGroup.get('fecha').dirty) && !formGroup.get('fecha').valid }">
+      <label class="col-md-2 control-label"
+             for="fecha">Fecha</label>
+
+      <div class="col-md-8">
+        <input class="form-control"
+               id="fecha"
+               type="date"
+               required
+               formControlName="fecha" />
+        <span class="help-block" *ngIf="(formGroup.get('fecha').touched || formGroup.get('fecha').dirty) && formGroup.get('fecha').errors">
+          <span *ngIf="formGroup.get('fecha').errors.required">
+            El campo Fecha es requerido
+          </span>
+        </span>
+      </div>
+    </div>
+
+
+    <div class="form-group"
+         [ngClass]="{'has-error': (formGroup.get('descripcion').touched || formGroup.get('descripcion').dirty) && !formGroup.get('descripcion').valid }">
+      <label class="col-md-2 control-label"
+             for="descripcion">Descripcion</label>
+
+      <div class="col-md-8">
+        <input class="form-control"
+               id="descripcion"
+               type="text"
+               required
+               formControlName="descripcion" />
+        <span class="help-block" *ngIf="(formGroup.get('descripcion').touched || formGroup.get('descripcion').dirty) && formGroup.get('descripcion').errors">
+          <span *ngIf="formGroup.get('descripcion').errors.required">
+            El campo Descripcion es requerido
+          </span>
+        </span>
+      </div>
+    </div>
+
+    <div class="form-group"
+         [ngClass]="{'has-error': (formGroup.get('lim_Mod').touched || formGroup.get('lim_Mod').dirty) && !formGroup.get('lim_Mod').valid }">
+      <label class="col-md-2 control-label"
+             for="lim_Mod">Limpieza de Modulo</label>
+
+      <div class="col-md-1">
+        <input class="form-control"
+               id="lim_Mod"
+               type="checkbox"
+               required
+               formControlName="lim_Mod" />
+        <span class="help-block" *ngIf="(formGroup.get('lim_Mod').touched || formGroup.get('lim_Mod').dirty) && formGroup.get('lim_Mod').errors">
+          <span *ngIf="formGroup.get('lim_Mod').errors.required">
+            *El campo es requerido!
+          </span>
+        </span>
+      </div>
+    </div>
+
+    <div class="form-group"
+         [ngClass]="{'has-error': (formGroup.get('lim_Ur').touched || formGroup.get('lim_Ur').dirty) && !formGroup.get('lim_Ur').valid }">
+      <label class="col-md-2 control-label"
+             for="lim_Ur">Limpieza de UR</label>
+
+      <div class="col-md-1">
+        <input class="form-control"
+               id="lim_Ur"
+               type="checkbox"
+               required
+               formControlName="lim_Ur" />
+        <span class="help-block" *ngIf="(formGroup.get('lim_Ur').touched || formGroup.get('lim_Ur').dirty) && formGroup.get('lim_Ur').errors">
+          <span *ngIf="formGroup.get('lim_Ur').errors.required">
+            *El campo es requerido!
+          </span>
+        </span>
+      </div>
+    </div>
+
+
+    <div class="form-group"
+         [ngClass]="{'has-error': (formGroup.get('lim_Op').touched || formGroup.get('lim_Op').dirty) && !formGroup.get('lim_Op').valid }">
+      <label class="col-md-2 control-label"
+             for="lim_Op">Limpieza de OP</label>
+
+      <div class="col-md-1">
+        <input class="form-control"
+               id="lim_Op"
+               type="checkbox"
+               required
+               formControlName="lim_Op" />
+        <span class="help-block" *ngIf="(formGroup.get('lim_Op').touched || formGroup.get('lim_Op').dirty) && formGroup.get('lim_Op').errors">
+          <span *ngIf="formGroup.get('lim_Op').errors.required">
+            *El campo es requerido!
+          </span>
+        </span>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-md-4 col-md-offset-2">
+        <span>
+          <button class="btn btn-primary"
+                  type="submit"
+                  [disabled]="!formGroup.valid">
+            Salvar
+          </button>
+          <button class="btn"
+                  type="button"
+                  [routerLink]='["/reparaciones/:id"]'>
+            Cancelar
+          </button>
+        </span>
+
+      </div>
+
+    </div>
