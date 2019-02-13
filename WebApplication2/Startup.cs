@@ -12,7 +12,11 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using Model;
 using Repositories;
+using Repositories.Contracts;
+using Repositories.Repository;
 using Service;
+using Service.BusinessLogic;
+using Service.Contracts;
 using System;
 using System.Data;
 using System.Data.Common;
@@ -55,6 +59,9 @@ namespace WebApplication2
 
             services.AddSingleton<IDatabaseProviderFactory, DatabaseProviderFactory>();
             services.AddSingleton<IObjMapper, ObjMapper>();
+
+            services.AddSingleton<IRepairPieceService, RepairPieceService>();
+            services.AddSingleton<IRepairPieceRepository, RepairPieceRepository>();
 
 
                 services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)

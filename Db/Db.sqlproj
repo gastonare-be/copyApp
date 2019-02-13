@@ -63,15 +63,21 @@
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Stored Procedures\filterByColumns.sql" />
-    <Build Include="dbo\Tables\Clientes.sql" />
-    <Build Include="dbo\Tables\Proveedor.sql" />
     <Build Include="dbo\Tables\Printer.sql" />
-    <Build Include="dbo\Tables\Maquinas.sql" />
     <Build Include="dbo\Tables\CustomerPrinter.sql" />
     <Build Include="dbo\Tables\Customer.sql" />
     <Build Include="dbo\Tables\Category.sql" />
     <Build Include="dbo\Stored Procedures\mg_Printer_GetAll.sql" />
     <Build Include="dbo\Stored Procedures\mg_CustomerPrinter_GetAll.sql" />
     <Build Include="dbo\Stored Procedures\mg_Category_GetAll.sql" />
+    <Build Include="dbo\Tables\RepairPiece.sql" />
+    <Build Include="dbo\Tables\Repair.sql" />
+    <Build Include="dbo\Tables\Provider.sql" />
+    <Build Include="dbo\Tables\Piece.sql" />
+    <Build Include="dbo\Stored Procedures\usp_RepairPiece_GetAll.sql" />
+    <Build Include="dbo\Stored Procedures\mg_Printer_UpdateById.sql" />
+    <Build Include="dbo\Stored Procedures\mg_Printer_DeleteById.sql" />
+    <Build Include="dbo\Stored Procedures\mg_Printer_Add.sql" />
+    <Build Include="dbo\Stored Procedures\mg_Customer_GetAll.sql" />
   </ItemGroup>
 </Project>

@@ -47,15 +47,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseService.cs" />
-    <Compile Include="CategoryService.cs" />
-    <Compile Include="CustomerPrinterService.cs" />
-    <Compile Include="CustomerService.cs" />
-    <Compile Include="IBaseService.cs" />
-    <Compile Include="ICategoryService.cs" />
-    <Compile Include="ICustomerPrinterService.cs" />
-    <Compile Include="ICustomerService.cs" />
-    <Compile Include="IPrinterService.cs" />
-    <Compile Include="PrinterService.cs" />
+    <Compile Include="BusinessLogic\CategoryService.cs" />
+    <Compile Include="BusinessLogic\CustomerPrinterService.cs" />
+    <Compile Include="BusinessLogic\CustomerService.cs" />
+    <Compile Include="BusinessLogic\RepairPieceService.cs" />
+    <Compile Include="Contracts\IBaseService.cs" />
+    <Compile Include="Contracts\ICategoryService.cs" />
+    <Compile Include="Contracts\ICustomerPrinterService.cs" />
+    <Compile Include="Contracts\ICustomerService.cs" />
+    <Compile Include="Contracts\IPrinterService.cs" />
+    <Compile Include="BusinessLogic\PrinterService.cs" />
+    <Compile Include="Contracts\IRepairPieceService.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
