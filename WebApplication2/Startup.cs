@@ -64,20 +64,20 @@ namespace WebApplication2
             services.AddSingleton<IRepairPieceRepository, RepairPieceRepository>();
 
 
-                services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-                .AddJwtBearer(options =>
-                 options.TokenValidationParameters = new TokenValidationParameters
-                 {
-                     ValidateIssuer = true,
-                     ValidateAudience = true,
-                     ValidateLifetime = true,
-                     ValidateIssuerSigningKey = true,
-                     ValidIssuer = "yourdomain.com",
-                     ValidAudience = "yourdomain.com",
-                     IssuerSigningKey = new SymmetricSecurityKey(
-                    Encoding.UTF8.GetBytes(Configuration["Llave_super_secreta"])),
-                     ClockSkew = TimeSpan.Zero
-                 });
+            //services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+            //.AddJwtBearer(options =>
+            // options.TokenValidationParameters = new TokenValidationParameters
+            // {
+            //     ValidateIssuer = true,
+            //     ValidateAudience = true,
+            //     ValidateLifetime = true,
+            //     ValidateIssuerSigningKey = true,
+            //     ValidIssuer = "yourdomain.com",
+            //     ValidAudience = "yourdomain.com",
+            //     IssuerSigningKey = new SymmetricSecurityKey(
+            //    Encoding.UTF8.GetBytes(Configuration["Llave_super_secreta"])),
+            //     ClockSkew = TimeSpan.Zero
+            // });
 
 
             // In production, the Angular files will be served from this directory
